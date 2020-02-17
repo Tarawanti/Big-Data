@@ -43,7 +43,7 @@ print("2.4: Total number of ratings:", ratings)
  
  
 #3----------------------------------------------------
-'''
+ 
 #3.1
 print("\n\n3.1: Number of ratings per user")
 ratingPerUser=df.groupby('user_id')['rating'].count()
@@ -102,12 +102,6 @@ plt.title("Bar Chart of average ratings per genre")
 plt.bar(x=df.groupby('genres')['rating'].mean().index, color='black',
         height=df.groupby('genres')['rating'].mean().values, width=1)
 plt.show()
-'''
+ 
 #4----------------------------------------------------
-medianNumberRating = data.groupby('user_id')['rating'].count().median()
-aboveMedian = data.groupby('user_id')['rating'].count().\
-            apply(lambda x: x>medianNumberRating).to_frame()
-aboveMedian = aboveMedian[aboveMedian['rating'] == True]
-print("Number of users whose number of ratings are greater or equal to the",
-      "median of the number of ratings are", len(aboveMedian))
-#df.loc[:,"Score1"].median()
+ 
